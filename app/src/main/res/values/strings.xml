@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">sensordata-libs</string>
+    <string name="no_permissions"
+        description="Text shown on Android Toast when permissions are not granted.
+                         [CHAR_LIMIT=30]">
+            Permissions not granted</string>
+    <string name="ov_connected">OV Connected</string>
+    <string name="st_connected">ST Connected</string>
+    <string name="start_test">START libsensordata Test</string>
+    <string name="stop_test">STOP libsensordata Test</string>
+</resources>
