@@ -34,7 +34,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.serenegiant.common.BaseActivity;
+import com.serenegiant.usb.DeviceFilter;
 import com.serenegiant.usb.USBMonitor;
+
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -332,6 +335,8 @@ public class MainActivity extends BaseActivity {
             }
         });
         mUSBMonitor = new USBMonitor(this, mOnDeviceConnectListener);
+        final List<DeviceFilter> filters = DeviceFilter.getDeviceFilters(this, R.xml.device_filter);
+        mUSBMonitor.setDeviceFilter(filters);
 
         mWorkThread = new HandlerThread("WorkThread");
         mWorkThread.start();
