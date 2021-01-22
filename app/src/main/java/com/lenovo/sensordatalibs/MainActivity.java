@@ -380,15 +380,16 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         if (DEBUG)Log.d(TAG, "onResume");
         super.onResume();
-        synchronized (mSync) {
-            if (mUSBMonitor != null) {
-                mUSBMonitor.register();
-            }
-        }
         // Checks for activity permissions, if not granted, requests them.
         if (!arePermissionsEnabled()) {
             requestPermissions();
             return;
+        } else {
+            synchronized (mSync) {
+                if (mUSBMonitor != null) {
+                    mUSBMonitor.register();
+                }
+            }
         }
     }
 
