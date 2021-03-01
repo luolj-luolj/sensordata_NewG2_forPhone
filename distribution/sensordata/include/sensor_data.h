@@ -36,7 +36,7 @@ hardware_sync_imu_index[1]:    6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 7 7 7
 @acc:				imu data, the 3 axis data of acceleration, unit: m^2/s
 @gyro:				imu data, the 3 axis data of gyroscope, unit: rad/s
 @mag:				imu data, the 3 axis data of magnet, unit: ut
-@temperature:		imu temperature, unit: ¡æ
+@temperature:		imu temperature, unit: <A1><E6>
 @time_stamp:		imu data timestamp,  unit: ns
 @tag:				some auxiliary infomation of data
 @Note:
@@ -184,7 +184,7 @@ SENSOR_DATA_EXPORT SensorData_CODE stop_sensor(char* sensor_id);
 SENSOR_DATA_EXPORT SensorData_CODE initial_sensor();
 SENSOR_DATA_EXPORT SensorData_CODE release_sensor();
 
-SensorData_CODE setUsbParams(int vid, int pid, int fd, int busnum, int devaddr, const char *usbfs);
-SensorData_CODE setStUfd(int vid, int pid, int fd, int busnum, int devaddr, const char *usbfs);
+SENSOR_DATA_EXPORT SensorData_CODE setUsbParams(int vid, int pid, int fd, int busnum, int devaddr, const char *usbfs);
+SENSOR_DATA_EXPORT SensorData_CODE setStUfd(int vid, int pid, int fd, int busnum, int devaddr, const char *usbfs);
 
 #endif
